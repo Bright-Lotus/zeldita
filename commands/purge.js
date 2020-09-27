@@ -1,6 +1,6 @@
 module.exports = {
 	name: 'purge',
-	description: 'Purga mensajes! [ADMIN ONLY]',
+	description: 'Purga mensajes! [ADMIN ONLY] (No funciona para MDs)',
 	aliases: ['pg', 'prune'],
 	execute(message, args) {
 		const amount = parseInt(args[0]) + 1;

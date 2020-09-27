@@ -18,7 +18,7 @@ module.exports = {
 			.setDescription('Estos son los comandos que puedo hacer por ti n.n')
 			.setThumbnail(botAvatar)
 			.setTimestamp()
-			.setFooter('z!help', botAvatar);
+			.setFooter('Escribe z!help [comando] para ayuda detallada. | Desarrollado por !Princesa del agua, Zelda Zamora#3628', botAvatar);
 
 		if (!args.length) {
 			data.push('Here\'s a list of all my commands:');
@@ -32,7 +32,7 @@ module.exports = {
 
 			return message.author.send(helpEmbed).then(() => {
 				if (message.channel.type === 'dm') return;
-				message.author.send(`\n Puedes mandar\`${prefix}help [command name]\` para obtener info en un comando especifico`);
+				message.author.send(`\n Puedes mandar \`${prefix}help [command name]\` para obtener info en un comando especifico`);
 				message.reply('te he mandado un MD con toda la info').then(msg => {
 					msg.delete({ timeout: 2500 });
 				});
