@@ -33,7 +33,7 @@ module.exports = {
 			return message.author.send(helpEmbed).then(() => {
 				if (message.channel.type === 'dm') return;
 				message.author.send(`\n Puedes mandar \`${prefix}help [command name]\` para obtener info en un comando especifico`);
-				message.reply('te he mandado un MD con toda la info').then(msg => {
+				message.reply('te he mandado un MD con toda la info n.n').then(msg => {
 					msg.delete({ timeout: 2500 });
 				});
 			}).catch(error => {

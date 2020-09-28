@@ -6,7 +6,6 @@ const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-const logsChannel = client.channels.cache.find(channel => channel.id == '759041872407822376');
 
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
@@ -17,7 +16,7 @@ const cooldowns = new Discord.Collection();
 
 client.once('ready', () => {
 	client.user.setActivity('z!help');
-	console.log('Estoy lista n.n');
+	console.log('Estoy lista n.n (Zeldita 0.1.0)');
 });
 
 client.on('message', message => {
@@ -80,7 +79,7 @@ client.on('message', message => {
 		command.execute(message, args);
 	}
 	catch (error) {
-		logsChannel.send(error.toString());
+		client.channels.cache.get('759041872407822376').send(error.toString());
 		console.error(error);
 		message.reply('Hubo un error mientras ejecutaba ese comando unu');
 	}
